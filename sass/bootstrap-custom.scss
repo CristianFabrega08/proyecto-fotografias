@@ -1,0 +1,13 @@
+
+$custom-color-theme:(
+    "Fondo": #20c997,
+);
+
+
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$theme-colors: map-merge($theme-colors, $custom-color-theme );
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss"
