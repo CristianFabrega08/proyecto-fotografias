@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\CuentasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\InicioController;
 
 route::get('/',[InicioController::class,'index'])->name('home.index');
 route::get('/login',[InicioController::class,'login'])->name('home.InicioSesion');
+Route::post('cuentas/login',[CuentasController::class,'login'])->name('cuentas.login');
