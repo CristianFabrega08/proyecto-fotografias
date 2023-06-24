@@ -39,8 +39,8 @@
               Artista
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Crear cuenta</a></li>
-              <li><a class="dropdown-item" href="#">Publicar Fotografias</a></li>
+              <li><a class="dropdown-item" href="{{route('artista.index')}}">Crear cuenta</a></li>
+              <li><a class="dropdown-item" href="{{route('artista.foto')}}">Publicar Fotografias</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Editar Fotografias</a></li>
               <li><a class="dropdown-item" href="#">BAN</a></li>
