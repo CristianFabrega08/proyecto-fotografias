@@ -1,9 +1,5 @@
+@extends('layouts.master')
 
-
-<body>
-    <div>
-        
-    </div>
-</body>
+@section('contenido')
 
 @endsection
