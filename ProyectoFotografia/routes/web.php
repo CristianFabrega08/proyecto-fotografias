@@ -21,7 +21,7 @@ use App\Http\Controllers\AdministradoresController;
 //    return view('welcome');
 //});
 //VISTAS
-Route::get('/',[InicioController::class,'index'])->name('home.index');
+Route::get('inicio/index',[InicioController::class,'index'])->name('home.index');
 Route::get('/index',[ArtistasController::class,'index'])->name('artista.index');
 Route::get('/',[AdministradoresController::class,'index'])->name('administrador.index');
 Route::get('artistas/subirFoto',[ArtistasController::class,'subirFoto'])->name('artista.subirFoto');

@@ -72,6 +72,7 @@ class CuentasController extends Controller
             
             $cuentas = Cuenta::where('user',$request->user)->first();  
             
+            //return redirect()->route('home.index');
             return redirect()->route('home.index');
         }
         else{
