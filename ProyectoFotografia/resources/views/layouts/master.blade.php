@@ -28,7 +28,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Listar perfiles</a></li>
-              <li><a class="dropdown-item" href="#">Gestionar cuentas</a></li>
+              <li><a class="dropdown-item" href="{{route('administrador.index')}}">Gestionar cuentas</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Fotografias</a></li>
               <li><a class="dropdown-item" href="#">BAN</a></li>
@@ -40,10 +40,10 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{route('artista.index')}}">Crear cuenta</a></li>
-              <li><a class="dropdown-item" href="{{route('artista.foto')}}">Publicar Fotografias</a></li>
+              <li><a class="dropdown-item" href="{{route('artista.subirFoto')}}">Publicar Fotografias</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Editar Fotografias</a></li>
-              <li><a class="dropdown-item" href="#">BAN</a></li>
+              
             </ul>
           </li>
         </ul>
