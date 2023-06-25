@@ -16,10 +16,7 @@ use App\Http\Controllers\AdministradoresController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+//*
 //VISTAS
 Route::get('inicio/index',[InicioController::class,'index'])->name('home.index');
 Route::get('inicio/login',[InicioController::class,'login'])->name('home.InicioSesion');
@@ -27,7 +24,9 @@ Route::get('inicio/login',[InicioController::class,'login'])->name('home.InicioS
 Route::get('/index',[ArtistasController::class,'index'])->name('artista.index');
 Route::get('artistas/subirFoto',[ArtistasController::class,'subirFoto'])->name('artista.subirFoto');
 
-Route::get('/',[AdministradoresController::class,'index'])->name('administrador.index');
+Route::get('/index/administrador',[AdministradoresController::class,'index'])->name('administrador.index');
+
+Route::get('/',[InicioController::class,'index'])->name('home.index');
 
 
 Route::post('cuentas/login',[CuentasController::class,'login'])->name('cuentas.login');
