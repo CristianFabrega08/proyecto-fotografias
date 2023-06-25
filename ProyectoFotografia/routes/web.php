@@ -22,10 +22,13 @@ use App\Http\Controllers\AdministradoresController;
 //});
 //VISTAS
 Route::get('inicio/index',[InicioController::class,'index'])->name('home.index');
+Route::get('inicio/login',[InicioController::class,'login'])->name('home.InicioSesion');
+
 Route::get('/index',[ArtistasController::class,'index'])->name('artista.index');
-Route::get('/',[AdministradoresController::class,'index'])->name('administrador.index');
 Route::get('artistas/subirFoto',[ArtistasController::class,'subirFoto'])->name('artista.subirFoto');
 
+Route::get('/',[AdministradoresController::class,'index'])->name('administrador.index');
 
-Route::get('/login',[InicioController::class,'login'])->name('home.InicioSesion');
+
 Route::post('cuentas/login',[CuentasController::class,'login'])->name('cuentas.login');
+Route::get('cuentas/logout',[CuentasController::class,'logout'])->name('cuentas.logout');
