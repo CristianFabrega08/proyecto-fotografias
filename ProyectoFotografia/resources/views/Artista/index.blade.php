@@ -10,8 +10,8 @@
                         Crea tu cuenta
                     </div>
                     <div class="card-body">
-                        <form action="">
-        
+                        <form method="POST" action="{{route('cuentas.store')}}">
+                            @csrf
                             <div class="mb-3">
                                 <label for="user" class="form-label">User</label>
                                 <input type="text" id="user" name="user" class="form-control">
