@@ -31,6 +31,14 @@
                                 <label for="apellido" class="form-label">Apellido</label>
                                 <input type="text" id="apellido" name="apellido" class="form-control">
                             </div>
+                            <div class="form-group mb-3">
+                                <label for="perfil">Identifiquese:</label>
+                                <select name="perfil" id="perfil" class="form-control">
+                                    @foreach ( $perfiles as $perfil)
+                                        <option value="{{$perfil->id}}">{{$perfil->nombre}}</option>
+                                    @endforeach
+                                </select>
+                            </div>    
                             <div class="mb-3 d-grid gap-2 d-lg-block">
                                 <button type ="reset" class="btn btn-danger">Cancelar</button>
                                 <button type ="submit" class="btn btn-success">Enviar datos</button>

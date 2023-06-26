@@ -33,15 +33,16 @@ class CuentasController extends Controller
      */
     public function store(Request $request){
         $cuenta = new Cuenta();
-        $perfil = new Perfil();
-        $perfil->user = $request->user;
-        $perfil->id = $request->perfil;
+        
+        
+        
         $cuenta->user = $request->user;
         $cuenta->password = $request->password;
         $cuenta->nombre = $request->nombre;
         $cuenta->apellido = $request->apellido;
+        $cuenta->perfil_id = $request->perfil;
         $cuenta->save();
-        $perfil->save();
+        
         return redirect()->route('home.InicioSesion');
     }
 
