@@ -7,6 +7,7 @@ use App\models\Perfil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 class CuentasController extends Controller
 {
@@ -37,10 +38,10 @@ class CuentasController extends Controller
         
         
         $cuenta->user = $request->user;
-        $cuenta->password = $request->password;
+        $cuenta->password = Hash::make($request->password);
         $cuenta->nombre = $request->nombre;
         $cuenta->apellido = $request->apellido;
-        $cuenta->perfil_id = $request->perfil;
+        $cuenta->perfil_id = 2;
         $cuenta->save();
         
         return redirect()->route('home.InicioSesion');
