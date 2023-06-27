@@ -23,6 +23,5 @@ class CuentasSeeder extends Seeder
                 'perfil_id' => 2,
             ]
         ]);
-        
     }
 }
