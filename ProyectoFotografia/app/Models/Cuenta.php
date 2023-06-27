@@ -15,4 +15,9 @@ class Cuenta extends Authenticable
     public function perfil(){
         return $this->belongsTo('App\Models\Perfil');
     }
+
+    public function imagenes(){
+        return $this->hasMany('App\Models\Imagen');
+    }
+
 }
