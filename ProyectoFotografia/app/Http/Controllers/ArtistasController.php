@@ -18,5 +18,7 @@ class ArtistasController extends Controller
         return view('artista.subirFoto');
     }
 
-    
+    public function store(Request $request){
+        
+    }
 }

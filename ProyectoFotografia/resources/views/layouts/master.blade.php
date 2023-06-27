@@ -27,8 +27,8 @@
               Administrador
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{route('administrador.ListaPerfiles')}}">Lista perfiles</a></li>
-              <li><a class="dropdown-item" href="{{route('administrador.index')}}">Gestionar cuentas</a></li>
+              <li><a class="dropdown-item" href="{{route('administrador.ListaPerfiles')}}">Gestionar Cuentas</a></li>
+              <li><a class="dropdown-item" href="{{route('administrador.index')}}">Tipos de perfiles</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Fotografias</a></li>
               <li><a class="dropdown-item" href="#">BAN</a></li>

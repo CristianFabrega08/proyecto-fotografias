@@ -2,12 +2,12 @@
 
 @section('contenido')
 
-<body>
+<body style="background: linear-gradient(to bottom, #d34563 0%, #3a4ec0 100%);">
     <div class="container-fluid min-vh-100 d-flex flex-column justify-content-lg-center">
         <div class="row d-flex flex-column justify-content-center align-items-center"  >
-            <div class="col-lg-8 bg-white">
+            <div class="col-12 col-lg-8 order-last order-lg-first bg-white">
                 <div class="card">
-                    <div class="col-12 col-lg-8 order-last order-lg-first">
+                    
                         <table class="table table-bordered table-striped table-hover">
                             <div class="card-header">
                                 Lista de perfiles
@@ -21,17 +21,17 @@
                                     <th>Id de perfil</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach($cuentas as $num => $cuenta)
+                           @foreach($cuentas as $num => $cuenta)
+                                <tbody>
                                     <td>{{$num+1}}</td>
                                     <td>{{$cuenta->user}}</td>
                                     <td>{{$cuenta->nombre}}</td>
                                     <td>{{$cuenta->apellido}}</td>
                                     <td>{{$cuenta->perfil_id}}</td>
-                                @endforeach
-                            </tbody>
+                                </tbody>
+                           @endforeach
                         </table>
-                    </div>
+                    
                 </div>
             </div>
         </div>

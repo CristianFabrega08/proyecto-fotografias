@@ -8,7 +8,7 @@
             <div class="col-lg-8 bg-white">
                 <div class="card">
                     <div class="card-header">
-                        Crea tu cuenta
+                        Sube tu fotografia
                     </div>
                     <div class="card-body">
                         <form method="" action="">
