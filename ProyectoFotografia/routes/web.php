@@ -30,6 +30,7 @@ Route::get('artistas/subirFoto',[ArtistasController::class,'subirFoto'])->name('
 
 Route::post('/cuentas',[CuentasController::class,'store'])->name('cuentas.store');
 Route::post('/artistas',[ArtistasController::class,'store'])->name('artista.store');
+Route::delete('/cuentas/{cuenta}',[CuentasController::class,'destroy'])->name('cuentas.destroy');
 Route::post('cuentas/login',[CuentasController::class,'login'])->name('cuentas.login');
 Route::get('cuentas/logout',[CuentasController::class,'logout'])->name('cuentas.logout');
 

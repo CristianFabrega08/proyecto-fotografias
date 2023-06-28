@@ -4,18 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Cuenta;
 use App\models\Perfil;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Gate;
 
 class CuentasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Cuenta $cuenta): RedirectResponse
     {
+
+        if(! Gate::denies('admin-listar', $cuenta)){
+            return redirect()->route('cuenta.index');
+        }
+
         $cuentas = Cuenta::all();
         $perfiles = Perfil::all();
         return view('cuenta.index',compact('cuentas','perfiles'));
@@ -32,16 +39,25 @@ class CuentasController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(Request $request){
+//        $nextid = DB::table('perfiles')->max('id')+1;
+        
         $cuenta = new Cuenta();
-        
-        
-        
+//        $perfil = new Perfil();
+
+
         $cuenta->user = $request->user;
+//        $perfil->nombre = $request->nombre;
         $cuenta->password = Hash::make($request->password);
         $cuenta->nombre = $request->nombre;
         $cuenta->apellido = $request->apellido;
         $cuenta->perfil_id = 2;
+//        $perfil->id = $nextid;
+//        $cuenta->perfil_id = $perfil->id;
+
+
+//        $perfil->save();
         $cuenta->save();
         
         return redirect()->route('home.InicioSesion');
@@ -74,16 +90,17 @@ class CuentasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Cuenta $cuenta)
     {
-        //
+        $cuenta->delete();
+        return redirect()->route('home.index');
     }
 
     public function login(Request $request){
         $credenciales = $request->only('user','password');
         if (Auth::attempt($credenciales)){
             
-            $cuentas = Cuenta::where('user',$request->user)->first();  
+            $cuenta = Cuenta::where('user',$request->user)->first();  
             
             //return redirect()->route('home.index');
             return redirect()->route('home.index');
