@@ -11,7 +11,7 @@
                         Sube tu fotografia
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{route('artista.store')}}">
+                        <form method="POST" action="{{route('artista.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="titulo" class="form-label">Titulo</label>

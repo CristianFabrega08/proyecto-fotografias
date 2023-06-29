@@ -6,6 +6,7 @@ use App\Models\Perfil;
 use App\Models\Imagen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Auth;
 
 class ArtistasController extends Controller
 {

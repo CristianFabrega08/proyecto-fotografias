@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Imagen extends Model
 {
     protected $table = 'imagenes';
+
+    protected $primaryKey = 'archivo';
     
     public function cuentasi(){
         return $this->belongsTo('App\Models\Cuenta');
