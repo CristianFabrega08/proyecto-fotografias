@@ -37,7 +37,7 @@
                                         </span>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="cuentaBorrarModel{{$cuenta->perfil_id}}" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="cuentaBorrarModel{{$cuenta->perfil_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">

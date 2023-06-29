@@ -51,15 +51,19 @@ class CuentasController extends Controller
      */
 
     public function store(Request $request){
+        $nextId  = DB::table('perfiles')->max('id') + 1;
         
         $cuenta = new Cuenta();
-
+        $perfil = new Perfil();
 
         $cuenta->user = $request->user;
+        $perfil->nombre = $request->user;
         $cuenta->password = Hash::make($request->password);
         $cuenta->nombre = $request->nombre;
         $cuenta->apellido = $request->apellido;
-        $cuenta->perfil_id = 2;
+        $perfil->id = $nextId;
+        $cuenta->perfil_id = $nextId;
+        $perfil->save();
         $cuenta->save();
         
         return redirect()->route('home.InicioSesion');
