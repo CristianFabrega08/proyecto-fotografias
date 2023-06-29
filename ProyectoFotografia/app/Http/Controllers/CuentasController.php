@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\DB;
 
 class CuentasController extends Controller
 {
@@ -41,23 +42,23 @@ class CuentasController extends Controller
      */
 
     public function store(Request $request){
-//        $nextid = DB::table('perfiles')->max('id')+1;
+        $nextid = DB::table('perfiles')->max('id')+1;
         
         $cuenta = new Cuenta();
-//        $perfil = new Perfil();
+        $perfil = new Perfil();
 
 
         $cuenta->user = $request->user;
-//        $perfil->nombre = $request->nombre;
+        $perfil->nombre = $request->nombre;
         $cuenta->password = Hash::make($request->password);
         $cuenta->nombre = $request->nombre;
         $cuenta->apellido = $request->apellido;
-        $cuenta->perfil_id = 2;
-//        $perfil->id = $nextid;
-//        $cuenta->perfil_id = $perfil->id;
+        $cuenta->perfil_id = $request->nextid;
+        $perfil->id = $nextid;
+        $cuenta->perfil_id = $perfil->id;
 
 
-//        $perfil->save();
+        $perfil->save();
         $cuenta->save();
         
         return redirect()->route('home.InicioSesion');

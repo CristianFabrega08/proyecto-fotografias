@@ -50,9 +50,16 @@
                                                 <div class="modal-footer">
                                                     <form method="POST" action="{{route('cuentas.destroy',$cuenta->perfil_id)}}">
                                                         @csrf
+                                                        @if ($cuenta->perfil_id==1)
+                                                        <button type="button" class="btn btn-primary">No se puede borrar al administrador</button>
+
+                                                        @else
+                                                        
                                                         @method('delete')
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                        <button type="submit" class="btn btn-primary">Borrar usuario</button>
+                                                        <button type="submit" class="btn btn-warning">Borrar usuario</button>
+                                                        @endif
+
                                                     </form>
                                                 </div>
                                         </div>
