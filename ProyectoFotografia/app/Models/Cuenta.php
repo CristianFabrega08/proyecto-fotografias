@@ -13,6 +13,7 @@ class Cuenta extends Authenticable
 
     protected $table = 'cuentas';
     protected $primaryKey = 'perfil_id';
+    
 
     public function perfil(){
         return $this->belongsTo('App\Models\Perfil');

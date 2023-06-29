@@ -11,16 +11,16 @@
                         Sube tu fotografia
                     </div>
                     <div class="card-body">
-                        <form method="" action="">
+                        <form method="POST" action="{{route('artista.store')}}">
                             @csrf
                             <div class="mb-3">
-                                <label for="user" class="form-label">Titulo</label>
-                                <input type="text" id="user" name="user" class="form-control">
+                                <label for="titulo" class="form-label">Titulo</label>
+                                <input type="text" id="titulo" name="titulo" class="form-control">
                             </div>
         
                             <div>
-                                <label for="formFileLg" class="form-label">Suba aquí la imagen</label>
-                                <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                <label for="archivo">suba aqui la foto: </label>
+                                <input type="file" id="archivo" name="archivo" class="form-control-file">
                             </div>
                             <div class="mb-3 d-grid gap-2 d-lg-block mt-4">
                                 <button type ="reset" class="btn btn-danger">Cancelar</button>
