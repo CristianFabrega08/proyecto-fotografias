@@ -30,7 +30,14 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('artista-listar',function(Cuenta $cuenta){
-            return $cuenta->perfil_id!=1;
+            return $cuenta->perfil_id>1;
+        });
+
+        Gate::define('visitante',function(Cuenta $cuenta){
+            return $cuenta->perfil_id == null;
+        });
+        Gate::define('usuario',function(Cuenta $cuenta){
+            return $cuenta->perfil_id>=1;
         });
     }
 }

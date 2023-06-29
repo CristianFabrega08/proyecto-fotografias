@@ -26,6 +26,12 @@ class CuentasController extends Controller
         if(! Gate::denies('artista-listar', $cuenta)){
             return redirect()->route('cuenta.index');
         }
+        if(! Gate::denies('visitante', $cuenta)){
+            return redirect()->route('cuenta.index');
+        }
+        if(! Gate::denies('usuario', $cuenta)){
+            return redirect()->route('cuenta.index');
+        }
 
         $cuentas = Cuenta::all();
         $perfiles = Perfil::all();

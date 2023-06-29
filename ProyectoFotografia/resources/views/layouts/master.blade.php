@@ -10,7 +10,15 @@
  <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary" style="height: 70px">
     <div class="container-fluid">
+      @if (Gate::allows('usuario'))
       <a class="navbar-brand" href="#">Bienvenido {{Auth::user()->user}}</a>
+
+      @else
+      <a class="navbar-brand" href="#">Bienvenido</a>
+      @endif
+
+      
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,9 +58,18 @@
           </li>
           @endif
         </ul>
+        @if(Gate::allows('usuario'))
         <form class="d-flex">
           <a href="{{route('cuentas.logout')}}" class="btn btn-danger">Cerrar Sesión</a>
         </form>
+        @else
+        <form class="d-flex">
+          <a href="{{route('home.InicioSesion')}}" class="btn btn-primary">iniciar sesion</a>
+        </form>
+        @endif
+        
+
+
       </div>
     </div>
   </nav>
