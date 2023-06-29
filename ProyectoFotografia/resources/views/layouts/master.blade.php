@@ -22,6 +22,7 @@
           <li class="nav-item"> <!--Este es para el publico sin cuenta-->
             <a class="nav-link" href="#">Ver Fotografias de artistas</a>
           </li>
+          @if (Gate::allows('admin-listar'))
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Administrador
@@ -33,7 +34,9 @@
               <li><a class="dropdown-item" href="#">Fotografias</a></li>
               <li><a class="dropdown-item" href="#">BAN</a></li>
             </ul>
+          @endif
           </li>
+          @if (Gate::allows('artista-listar'))
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Artista
@@ -45,6 +48,7 @@
               <li><a class="dropdown-item" href="#">Editar Fotografias</a></li>
             </ul>
           </li>
+          @endif
         </ul>
         <form class="d-flex">
           <a href="{{route('cuentas.logout')}}" class="btn btn-danger">Cerrar Sesión</a>

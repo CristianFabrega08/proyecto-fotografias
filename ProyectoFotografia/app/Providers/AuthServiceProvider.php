@@ -28,5 +28,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('admin-listar',function(Cuenta $cuenta){
             return $cuenta->perfil_id==1;
         });
+
+        Gate::define('artista-listar',function(Cuenta $cuenta){
+            return $cuenta->perfil_id!=1;
+        });
     }
 }
