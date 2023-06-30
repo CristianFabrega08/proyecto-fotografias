@@ -30,6 +30,7 @@
           <li class="nav-item"> <!--Este es para el publico sin cuenta-->
             <a class="nav-link" href="{{route('home.show')}}">Ver Fotografias de artistas</a>
           </li>
+
           @if (Gate::allows('admin-listar'))
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,18 +46,19 @@
           @endif
           </li>
           @if (Gate::allows('artista-listar'))
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Artista
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{route('artista.index')}}">Crear cuenta</a></li>
-              <li><a class="dropdown-item" href="{{route('artista.subirFoto')}}">Publicar Fotografias</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Editar Fotografias</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Artista
+              </a>
+              <ul class="dropdown-menu">
+                
+                <li><a class="dropdown-item" href="{{route('artista.subirFoto')}}">Publicar Fotografias</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Editar Fotografias</a></li>
+              </ul>
+            </li>
           @endif
+         
         </ul>
         @if(Gate::allows('usuario'))
         <form class="d-flex">
@@ -65,8 +67,13 @@
         @else
         <form class="d-flex">
           <a href="{{route('home.InicioSesion')}}" class="btn btn-primary">iniciar sesion</a>
+          
+        </form>
+        <form class="d-flex p-5">
+          <a href="{{route('artista.index')}}" class="btn btn-primary">Crear cuenta de artista</a>
         </form>
         @endif
+        
         
 
 

@@ -36,3 +36,4 @@ Route::get('cuentas/logout',[CuentasController::class,'logout'])->name('cuentas.
 
 Route::get('/index/administrador',[AdministradoresController::class,'index'])->name('administrador.index');
 route::get('/administrador/ListaPerfiles',[AdministradoresController::class,'ListaPerfiles'])->name('administrador.ListaPerfiles');
+

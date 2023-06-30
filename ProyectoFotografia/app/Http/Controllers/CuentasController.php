@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CuentasRequest;
 
 class CuentasController extends Controller
 {
@@ -50,20 +51,20 @@ class CuentasController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(Request $request){
-        $nextId  = DB::table('perfiles')->max('id') + 1;
+    public function store(CuentasRequest $request){
+        //$nextId  = DB::table('perfiles')->max('id') + 1;
         
         $cuenta = new Cuenta();
-        $perfil = new Perfil();
+        //$perfil = new Perfil();
 
         $cuenta->user = $request->user;
-        $perfil->nombre = $request->user;
+        $cuenta->nombre = $request->nombre;
         $cuenta->password = Hash::make($request->password);
         $cuenta->nombre = $request->nombre;
         $cuenta->apellido = $request->apellido;
-        $perfil->id = $nextId;
-        $cuenta->perfil_id = $nextId;
-        $perfil->save();
+        //$perfil->id = $nextId;
+        $cuenta->perfil_id = 2;
+        //$perfil->save();
         $cuenta->save();
         
         return redirect()->route('home.InicioSesion');

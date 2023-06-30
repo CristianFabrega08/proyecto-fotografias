@@ -12,8 +12,8 @@ class Cuenta extends Authenticable
     use HasFactory,SoftDeletes;
 
     protected $table = 'cuentas';
-    protected $primaryKey = 'perfil_id';
-    
+    protected $primaryKey = 'user';
+    public $incrementing = false;
 
     public function perfil(){
         return $this->belongsTo('App\Models\Perfil');

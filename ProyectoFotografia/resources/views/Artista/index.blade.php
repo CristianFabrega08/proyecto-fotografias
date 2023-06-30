@@ -10,6 +10,17 @@
                         Crea tu cuenta
                     </div>
                     <div class="card-body">
+                        @if ($errors->any())
+                        
+                                    <div class="alert alert-danger">
+                                        <p>ERROR </p>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                        @endif     </div>
+                        
                         <form method="POST" action="{{route('cuentas.store')}}">
                             @csrf
                             <div class="mb-3">
@@ -19,7 +30,7 @@
         
                             <div class="mb-3">
                                 <label for="password" class="form-label">Contraseña</label>
-                                <input type="text" id="password" name="password" class="form-control">
+                                <input type="password" id="password" name="password" class="form-control">
                             </div>
         
                             <div class="mb-3">

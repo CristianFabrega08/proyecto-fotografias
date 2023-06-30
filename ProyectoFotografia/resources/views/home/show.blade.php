@@ -2,21 +2,34 @@
 
 @section('contenido')
 
-<body style="background: linear-gradient(to bottom, #d34563 0%, #3a4ec0 100%);">
+<body >
     <div class="container-fluid min-vh-100 d-flex flex-column justify-content-lg-center">
-        <div class="row d-flex flex-column justify-content-center align-items-center"  >
-            <div class="col-12 col-lg-8 order-last order-lg-first bg-white">
-                @foreach ($imagen as $imagenes)
+        <form action="{{route('home.show')}}">
+            <select name="artista" id="" class="form-control">
+                <option value="">Ver todas las fotos</option>
+                @foreach ($artistas as $artista)
+                    <option value="{{$artista->user}}">{{$artista->user}}</option>
+                @endforeach
+                
+            </select>
+            <button type="submit" class="btn btn-success">Buscar</button>
+        </form>
+        <div class="row "  >
+            <div class=" col-lg-4 order-last order-lg-first bg-white">
+                @foreach ($imagenes as $imagen)
                 <div class="card">
-                    <div class="col-12 col-md-4 col-lg-2">
+                    
                         <div class="card">
-                            <img src="{{Storage::url($imagenes->archivo)}}" alt="{{$imagenes->titulo}} {{$imagenes->id}}">
+                            <div class="card-header">
+                                <h4>{{$imagen->titulo}} </h4>
+                            </div>
+                            
                             <div class="card-body">
-                                <h5 class="card-title">Titulo: {{$imagenes->titulo}}</h5>
-                                <h5>usuario: {{$imagenes->cuenta_user}}</h5>
+                                <img src="{{Storage::url($imagen->archivo)}}" alt="{{$imagen->titulo}} {{$imagen->id}}" class="card-content card-img-top">
+                                <h5>Autor: {{$imagen->cuenta_user}}</h5>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        <b># </b> {{$imagenes->id}}
+                                        <b> </b> {{$imagen->id}}
                                     </li>
                                 </ul>
                             </div>
@@ -28,9 +41,10 @@
                                     </button>
                                 </span>
                             </div>
+                            
                             @endif
                         </div>
-                    </div>
+                   
                 </div>
                 @endforeach
             </div>

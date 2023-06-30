@@ -6,6 +6,7 @@ use App\Models\Perfil;
 use App\Models\Imagen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\FotoRequest;
 use Auth;
 
 class ArtistasController extends Controller
@@ -21,7 +22,7 @@ class ArtistasController extends Controller
         return view('artista.subirFoto');
     }
 
-    public function store(Request $request){
+    public function store(FotoRequest $request){
         
 
         
@@ -35,4 +36,6 @@ class ArtistasController extends Controller
         $imagenes->save();
         return view('artista.subirFoto');
     }
+
+   
 }
