@@ -18,8 +18,8 @@ use App\Http\Controllers\PerfilController;
 */
 //*
 //VISTAS
-Route::get('/',[InicioController::class,'index'])->name('home.index');
-Route::get('inicio/index',[InicioController::class,'index'])->name('home.index');
+Route::get('/',[InicioController::class,'show'])->name('home.show');
+Route::get('inicio/show',[InicioController::class,'show'])->name('home.show');
 Route::get('inicio/login',[InicioController::class,'login'])->name('home.InicioSesion');
 
 Route::get('/index',[PerfilController::class,'index'])->name('perfil.index');

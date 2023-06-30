@@ -29,6 +29,10 @@
                             <div class="mb-3 text-end">
                                 
                                 <button type="submit" class="btn btn-success" hr>Iniciar Sesión</button>
+                                
+                            </div>
+                            <div>
+                                <a href="{{route('home.show')}}">entrar como visitante</a>
                             </div>
                         </form>
                     </div>

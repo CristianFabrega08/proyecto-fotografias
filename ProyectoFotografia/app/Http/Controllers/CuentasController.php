@@ -99,7 +99,7 @@ class CuentasController extends Controller
     public function destroy(Cuenta $cuenta)
     {
         $cuenta->delete();
-        return redirect()->route('home.index');
+        return redirect()->route('home.show');
     }
 
     public function login(Request $request){
@@ -109,7 +109,7 @@ class CuentasController extends Controller
             $cuenta = Cuenta::where('user',$request->user)->first();  
             
             //return redirect()->route('home.index');
-            return redirect()->route('home.index');
+            return redirect()->route('home.show');
         }
         else{
             

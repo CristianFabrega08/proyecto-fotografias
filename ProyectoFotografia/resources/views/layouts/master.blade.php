@@ -28,7 +28,7 @@
             <a class="nav-link active" aria-current="page" href="#"></a>
           </li>
           <li class="nav-item"> <!--Este es para el publico sin cuenta-->
-            <a class="nav-link" href="#">Ver Fotografias de artistas</a>
+            <a class="nav-link" href="{{route('home.show')}}">Ver Fotografias de artistas</a>
           </li>
           @if (Gate::allows('admin-listar'))
           <li class="nav-item dropdown">
